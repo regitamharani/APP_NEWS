@@ -6,24 +6,10 @@ Aplikasi berita berbasis Flutter yang mengambil data dari **GNews API** dengan a
 ---
 
 ## 📁 Struktur Folder
-lib/
-├── models/
-│   └── article_model.dart       # Definisi struktur data artikel
-├── services/
-│   ├── news_service.dart        # Logika pemanggilan GNews API
-│   └── cache_service.dart       # Penyimpanan & pembacaan cache lokal
-├── providers/
-│   └── news_provider.dart       # State management & logika bisnis
-└── views/
-├── home/
-│   └── home_view.dart       # Halaman utama (list berita, search, filter)
-├── detail/
-│   └── detail_view.dart     # Halaman detail artikel
-└── widgets/
-├── article_card.dart    # Reusable widget kartu artikel
-├── shimmer_card.dart    # Reusable widget loading shimmer
-└── error_widget.dart    # Reusable widget tampilan error
-
+- **`models/`** — Hanya berisi struktur data. Tidak mengetahui UI maupun logika bisnis sama sekali.
+- **`services/`** — Satu-satunya lapisan yang boleh berkomunikasi dengan dunia luar (API dan local storage). UI tidak pernah langsung memanggil HTTP request.
+- **`providers/`** — Jembatan antara `services/` dan `views/`. Mengelola state seperti status loading, daftar artikel, query pencarian, dan kategori aktif.
+- **`views/`** — Murni tampilan UI. Mengambil data dari Provider melalui `context.read` / `context.watch`, tidak pernah langsung ke service.
 ---
 
 ## 🧠 Alasan Memilih Provider
