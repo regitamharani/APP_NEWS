@@ -1,16 +1,29 @@
-# app_news
+# 📰 News App — Flutter
 
-A new Flutter project.
+Aplikasi berita berbasis Flutter yang mengambil data dari API dengan arsitektur modular, caching offline, dan error handling yang lengkap.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📁 Struktur Folder
+- **models/** — Struktur data
+- **services/** — API & cache
+- **providers/** — State management
+- **views/** — UI
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🧠 Alasan Memilih Provider
+- Ringan dan sesuai skala project
+- Mudah dipahami & debug
+- Terintegrasi dengan Flutter
+- Fleksibel untuk pengembangan lanjut
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## ✨ Fitur
+- 6 kategori berita
+- Search dengan debounce
+- Filter kategori
+- Shimmer loading
+- Cache offline
+- Error handling
